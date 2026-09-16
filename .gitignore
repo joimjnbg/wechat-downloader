@@ -1,0 +1,19 @@
+# Dependencies / generated — never commit
+node_modules/
+dist/
+dist-electron/
+dist-tsc/
+release/
+*.log
+.DS_Store
+
+# Local skill links (regenerable via skills CLI)
+.agents/
+
+# Upstream reference clone (own git repo; fork properly before pushing)
+wx-kit-upstream/
+
+# Credentials / session material
+*-creds.json
+wx-kit-weread-creds.json
+mp-session.json
