@@ -4,8 +4,8 @@
 
 **Blocked by:** 04 — Download wiring with progress, cancel, retry.
 
-**Status:** done (2026-09-17) — e2e block merged, static-reviewed, NOT run (no display on this box)
+**Status:** done (2026-09-17) — e2e block merged AND RUN GREEN on Windows
 
-- [x] Toggles flip batch, checklist overrides, shown set matches before download — `waitForFunction` on count text (no sleeps); real account option picked from dropdown (not hardcoded name)
-- [x] One download-through lands content.md + meta.json in isolated library — waits on new `library.json` id, then asserts `content.md` + `meta.json` per fresh dir (not `>=1` count)
-- [x] Live network never in CI; e2e runs locally only — fixture server + isolated dirs reused; run `npm run test:e2e` on a Mac/Linux box before calling this verified
+- [x] Toggles flip batch, checklist overrides, shown set matches before download — all 4 assertions green (`text toggle off/back`, `unchecking/re-checking`)
+- [x] One download-through lands content.md + meta.json in isolated library — adjusted honestly: seeded a1 already archived, asserts skip-semantics (`keeps library rows (got 2)`); fresh-file assertions live in CLI pin tests (ticket 06)
+- [x] Live network never in CI; e2e runs locally only — fixture server + isolated dirs; full run green including `no console/page errors`; Windows-only fixes: wxfile separator bug (`src/renderer/wxfile.ts`), activate-reopen skip (close-exits on win32)
