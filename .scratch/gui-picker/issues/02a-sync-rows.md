@@ -4,8 +4,8 @@
 
 **Blocked by:** 01 — Sync page shell with route, nav, and login state (done).
 
-**Status:** ready-for-agent
+**Status:** done (2026-09-17) — rows merged, review findings fixed
 
-- [ ] Seed URL resolves Account inline via `mp:search` for confirmation; account selector syncs subscribed rows via `subscriptions:checkNow` + `subscriptions:list`
-- [ ] Rows show title, type, archived-or-not (library cross-check); identity keys stable across re-syncs
-- [ ] Auth expiry surfaces as re-login path, never as empty rows
+- [x] Seed URL resolves Account inline via `mp:search` for confirmation; account selector syncs subscribed rows via `subscriptions:checkNow` + `subscriptions:list` — resolve confirms inline (no auto-subscribe: confirm-then-sync keeps ticket scope); both entries run the check pipeline
+- [x] Rows show title, type, archived-or-not (library cross-check); identity keys stable across re-syncs — `refId` (`mid_idx`, fallback normalized URL) plumbs through rows and list keys; archived checks canonical id first, URL second (short/long forms match)
+- [x] Auth expiry surfaces as re-login path, never as empty rows — expiry sets session warning with Settings re-scan path; review-fixed: renderer drops direct core import (type via `window.api` shape)
