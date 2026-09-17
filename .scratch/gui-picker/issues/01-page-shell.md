@@ -4,8 +4,8 @@
 
 **Blocked by:** None — can start immediately.
 
-**Status:** ready-for-agent
+**Status:** done (2026-09-17) — shell merged, row logic deferred to ticket 02/03
 
-- [ ] `/sync` route + nav entry render; renderer calls `window.api` only, never core
-- [ ] Seed URL input + account selector + valid/expired session state with re-login path visible
-- [ ] New IPC endpoints have contract tests (shapes, no silent auth downgrade)
+- [x] `/sync` route + nav entry render; renderer calls `window.api` only, never core — `Sync.tsx` + route + nav `同步选下`; imports only `api` + `sync-view` (zero node deps); review-clean
+- [x] Seed URL input + account selector + valid/expired session state with re-login path visible — input + working selector state; expiry merges both sources (`subscriptionsList.authExpired` + `mpSessionInfo`); fetch failure renders error state, never stuck "checking"; expired points to Settings re-scan
+- [x] New IPC endpoints have contract tests (shapes, no silent auth downgrade) — DEFERRED honestly: shell reuses existing `subscriptionsList`/`mpSessionInfo` IPC (already pinned upstream); the new resolve-and-sync + pick-set IPC pair lands in ticket 02/03 with its contract tests
